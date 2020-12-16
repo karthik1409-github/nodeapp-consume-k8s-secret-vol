@@ -4,7 +4,8 @@ var fs = require('fs');
 var server = http.createServer(function (request, response) 
 {
   response.writeHead(200, {"Content-Type": "text/html"});
-  
+  response.write("<h2>Node app ready to read secret</h2>");
+
   //read the secret values from a file
   fs.readFile('/etc/secret/password', 'UTF-8', (err, fileData) => {
     if(err)
